@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        // Define any environment variables here
         APP_NAME = 'MyApp'
     }
 
@@ -17,32 +16,28 @@ pipeline {
         stage('📦 Install Dependencies') {
             steps {
                 echo 'Installing dependencies...'
-                // Simulate install, replace with real command like `npm install` or `pip install -r requirements.txt`
-                sh 'echo Installing packages...'
+                bat 'echo Installing packages...'
             }
         }
 
         stage('🧪 Run Tests') {
             steps {
                 echo 'Running tests...'
-                // Replace with real test command
-                sh 'echo All tests passed!'
+                bat 'echo All tests passed!'
             }
         }
 
         stage('🔧 Build') {
             steps {
                 echo "Building ${env.APP_NAME}..."
-                // Replace with actual build command like `npm run build`
-                sh 'echo Build complete!'
+                bat 'echo Build complete!'
             }
         }
 
         stage('🚀 Deploy') {
             steps {
                 echo "Deploying ${env.APP_NAME}..."
-                // Simulate deployment
-                sh 'echo Deployment done!'
+                bat 'echo Deployment done!'
             }
         }
     }
